@@ -15,7 +15,7 @@ const ProfilePage = () => {
   const fetchProfile = async () => {
     try {
       setIsLoading(true);
-      const response = await axiosInstance.get('http://localhost:5000/profile', {
+      const response = await axiosInstance.get('/profile', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
         },

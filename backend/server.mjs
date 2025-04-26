@@ -19,11 +19,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(
 	cors({
-		origin: ['http://localhost:5174',
-			 'http://localhost:5173',
-			
-			
-			],
+		origin: ['http://localhost:5173'],
 		methods: ['GET', 'PUT', 'POST', 'DELETE'],
 		credentials: true,
 		allowedHeaders: ['Content-Type', 'Authorization'],
@@ -34,6 +30,7 @@ app.use((req, res, next) => {
 	console.log(`📢 Incoming: ${req.method} ${req.originalUrl}`);
 	next();
   });
+ 
   
 // Routes
 app.use('/auth', authRoutes);
@@ -42,7 +39,7 @@ app.use('/leave', leaveRoutes);
 app.use('/profile', profileRoutes);
 app.use('/salary',salaryRoutes)
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI) 
+mongoose.connect('mongodb+srv://atiqasohail37:zohahihi@atiqa1.frtcd.mongodb.net/BACKEND?retryWrites=true&w=majority&appName=Atiqa1') 
    
   .then(() => console.log(chalk.bold.bgGreen('MongoDB connected')))
   .catch((err) => console.error(chalk.bold.bgRed('Mongo Error:'), err));
