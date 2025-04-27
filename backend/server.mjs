@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(
 	cors({
-		origin: ['http://localhost:5173'],
+		origin: ['http://localhost:5173'," http://hackathon-nine-puce.vercel.app"],
 		methods: ['GET', 'PUT', 'POST', 'DELETE'],
 		credentials: true,
 		allowedHeaders: ['Content-Type', 'Authorization'],
